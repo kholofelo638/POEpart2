@@ -1,0 +1,25 @@
+name: Java Tests
+
+on:
+  push:
+    branches: [ "main", "master", "part2-sending-messages" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v4
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Run all unit tests (LoginTest and MessageTest)
+        run: mvn --batch-mode test
