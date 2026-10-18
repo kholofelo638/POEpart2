@@ -171,7 +171,7 @@ public class Main {
 
     /**
      * Lets the user enter exactly the number of messages they asked for. The
-     * loop counter is used as the message number, and the total is shown once
+     * loop counter is used as the message nr, and the total is shown once
      * every message has been dealt with.
      */
     private static void sendMessages(Scanner scanner, int messageLimit) {
